@@ -420,8 +420,19 @@
       .table-header h2 {
         font-size: 28px;
       }
-
+  
     }
+
+    /* HIDE EMAIL COLUMN ON MOBILE */
+
+@media(max-width:768px){
+
+  th:nth-child(3),
+  td:nth-child(3){
+    display:none;
+  }
+
+}
   </style>
 </head>
 
