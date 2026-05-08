@@ -44,8 +44,6 @@
       margin: auto;
     }
 
-    /* HERO */
-
     .hero {
       position: relative;
       overflow: hidden;
@@ -153,8 +151,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* INFO GRID */
-
     .info-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -214,8 +210,6 @@
       font-weight: bold;
     }
 
-    /* TABLE */
-
     .table-section {
       margin-top: 45px;
       background: rgba(255, 255, 255, 0.92);
@@ -251,8 +245,6 @@
       font-weight: 700;
       box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
     }
-
-    /* SEARCH */
 
     .search-box {
       margin-bottom: 25px;
@@ -341,8 +333,6 @@
       text-decoration: underline;
     }
 
-    /* FOOTER */
-
     .footer {
       margin-top: 40px;
       padding: 40px;
@@ -420,19 +410,17 @@
       .table-header h2 {
         font-size: 28px;
       }
-  
+
     }
 
-    /* HIDE EMAIL COLUMN ON MOBILE */
+    @media(max-width:768px) {
 
-@media(max-width:768px){
+      th:nth-child(3),
+      td:nth-child(3) {
+        display: none;
+      }
 
-  th:nth-child(3),
-  td:nth-child(3){
-    display:none;
-  }
-
-}
+    }
   </style>
 </head>
 
@@ -465,7 +453,7 @@
           </div>
 
           <div class="status-card">
-            <h2>31+</h2>
+            <h2 id="heroCount">0+</h2>
             <p>Students Successfully Registered</p>
           </div>
 
@@ -529,8 +517,8 @@
 
         <h2>📋 Admissions List</h2>
 
-        <div class="count-badge">
-          Total Registered Students : 31
+        <div class="count-badge" id="totalCount">
+          Total Registered Students : 0
         </div>
 
       </div>
@@ -540,7 +528,6 @@
           type="text"
           id="studentSearch"
           placeholder="Search student name or email..."
-          onkeyup="searchStudents()"
         >
       </div>
 
@@ -556,71 +543,7 @@
             </tr>
           </thead>
 
-          <tbody>
-
-            <tr><td class="serial">01</td><td>Gauravi Kishor Somvanshi</td><td class="email"><a href="mailto:gauravisomvanshi111@gmail.com">gauravisomvanshi111@gmail.com</a></td></tr>
-
-            <tr><td class="serial">02</td><td>Dhanashri Vishnu Wagh</td><td class="email"><a href="mailto:waghdhanashri72@gmail.com">waghdhanashri72@gmail.com</a></td></tr>
-
-            <tr><td class="serial">03</td><td>Samruddhi Dilip Unde</td><td class="email"><a href="mailto:samruddhiunde88@gmail.com">samruddhiunde88@gmail.com</a></td></tr>
-
-            <tr><td class="serial">04</td><td>Aditi Ganpat Bhondwe</td><td class="email"><a href="mailto:aditibhondwe16927@gmail.com">aditibhondwe16927@gmail.com</a></td></tr>
-
-            <tr><td class="serial">05</td><td>Durgesh Appasaheb Ohol</td><td class="email"><a href="mailto:oholdurgesh19@gmail.com">oholdurgesh19@gmail.com</a></td></tr>
-
-            <tr><td class="serial">06</td><td>Sahista Rashid Shaikh</td><td class="email"><a href="mailto:shaikhsahista673@gmail.com">shaikhsahista673@gmail.com</a></td></tr>
-
-            <tr><td class="serial">07</td><td>Sakshi Kishor Unde</td><td class="email"><a href="mailto:sakshiunde04@gmail.com">sakshiunde04@gmail.com</a></td></tr>
-
-            <tr><td class="serial">08</td><td>Sakshi Sandip Mahadik</td><td class="email"><a href="mailto:sakshimahadik50207@gmail.com">sakshimahadik50207@gmail.com</a></td></tr>
-
-            <tr><td class="serial">09</td><td>Snehal Bharat Bhadange</td><td class="email"><a href="mailto:bhadangesnehal48@gmail.com">bhadangesnehal48@gmail.com</a></td></tr>
-
-            <tr><td class="serial">10</td><td>Pooja Balasaheb Bhise</td><td class="email"><a href="mailto:poojabhise1020@gmail.com">poojabhise1020@gmail.com</a></td></tr>
-
-            <tr><td class="serial">11</td><td>Vaishali Balu Shinde</td><td class="email"><a href="mailto:platinumvaishub@gmail.com">platinumvaishub@gmail.com</a></td></tr>
-
-            <tr><td class="serial">12</td><td>Bhavika Ravindra Garje</td><td class="email"><a href="mailto:bhavikagarje14@gmail.com">bhavikagarje14@gmail.com</a></td></tr>
-
-            <tr><td class="serial">13</td><td>Gayatri Mohan Unde</td><td class="email"><a href="mailto:Gayatriunde520@gmail.com">Gayatriunde520@gmail.com</a></td></tr>
-
-            <tr><td class="serial">14</td><td>Archana Satish Sathe</td><td class="email"><a href="mailto:sathesatu@gmail.com">sathesatu@gmail.com</a></td></tr>
-
-            <tr><td class="serial">15</td><td>Vidya Vikas Pote</td><td class="email"><a href="mailto:poteaditya89@gmail.com">poteaditya89@gmail.com</a></td></tr>
-
-            <tr><td class="serial">16</td><td>Mhaske Shrdha Bapusaheb</td><td class="email"><a href="mailto:shradhamhaske2008@gmail.com">shradhamhaske2008@gmail.com</a></td></tr>
-
-            <tr><td class="serial">17</td><td>Thewarkar Madhuri Ramdas</td><td class="email"><a href="mailto:madhurithevarkar@gmail.com">madhurithevarkar@gmail.com</a></td></tr>
-
-            <tr><td class="serial">18</td><td>Hurule Pallavi Shankar</td><td class="email"><a href="mailto:pallavishirole07@gmail.com">pallavishirole07@gmail.com</a></td></tr>
-
-            <tr><td class="serial">19</td><td>Aniruddha Appasaheb Pandit</td><td class="email"><a href="mailto:aniruddhapandit56@gmail.com">aniruddhapandit56@gmail.com</a></td></tr>
-
-            <tr><td class="serial">20</td><td>Shubham Vasant Gadekar</td><td class="email"><a href="mailto:shubhambrogadekar679@gmail.com">shubhambrogadekar679@gmail.com</a></td></tr>
-
-            <tr><td class="serial">21</td><td>Harshad Rajendra Vidhate</td><td class="email"><a href="mailto:vidhateharshad26@gmail.com">vidhateharshad26@gmail.com</a></td></tr>
-
-            <tr><td class="serial">22</td><td>Shinde Pragati Nanasaheb</td><td class="email"><a href="mailto:Shindepragati3397@gmail.com">Shindepragati3397@gmail.com</a></td></tr>
-
-            <tr><td class="serial">23</td><td>Sakshi Shivaji Lokhande</td><td class="email"><a href="mailto:sakshilokhande8010@gmail.com">sakshilokhande8010@gmail.com</a></td></tr>
-
-            <tr><td class="serial">24</td><td>Almas Aslam Fakir</td><td class="email"><a href="mailto:almasfakir673@gmail.com">almasfakir673@gmail.com</a></td></tr>
-
-            <tr><td class="serial">25</td><td>Raut Sakshi Bharat</td><td class="email"><a href="mailto:rautsakshi14309@gmail.com">rautsakshi14309@gmail.com</a></td></tr>
-
-            <tr><td class="serial">26</td><td>Harshal Ishwar Jadhav</td><td class="email"><a href="mailto:jadhavharshal3609@gmail.com">jadhavharshal3609@gmail.com</a></td></tr>
-
-            <tr><td class="serial">27</td><td>Rohit Bhausaheb Gaikwad</td><td class="email"><a href="mailto:rohitgaikwad5868@gmail.com">rohitgaikwad5868@gmail.com</a></td></tr>
-
-            <tr><td class="serial">28</td><td>Payal Chandrabhan Dhepe</td><td class="email"><a href="mailto:payalcdhepe25@gmail.com">payalcdhepe25@gmail.com</a></td></tr>
-
-            <tr><td class="serial">29</td><td>Salve Nandini Ravindra</td><td class="email"><a href="mailto:nandinisalve89@gmail.com">nandinisalve89@gmail.com</a></td></tr>
-
-            <tr><td class="serial">30</td><td>Atul Dillip Suradkar</td><td class="email"><a href="mailto:Atulsuradkar2003@gmail.com">Atulsuradkar2003@gmail.com</a></td></tr>
-
-            <tr><td class="serial">31</td><td>Arya Arun Pawar</td><td class="email"><a href="mailto:aryapawar755@gmail.com">aryapawar755@gmail.com</a></td></tr>
-
-          </tbody>
+          <tbody id="studentTableBody"></tbody>
 
         </table>
 
@@ -672,38 +595,228 @@
   </div>
 
   <script>
-    function searchStudents() {
 
-      let input = document.getElementById("studentSearch");
-      let filter = input.value.toLowerCase();
+    // =========================
+    // STUDENT DATA
+    // =========================
 
-      let table = document.querySelector("table tbody");
-      let tr = table.getElementsByTagName("tr");
+   const students = [
+  {
+    name: "Gauravi Kishor Somvanshi",
+    email: "gauravisomvanshi111@gmail.com"
+  },
+  {
+    name: "Dhanashri Vishnu Wagh",
+    email: "waghdhanashri72@gmail.com"
+  },
+  {
+    name: "Samruddhi Dilip Unde",
+    email: "samruddhiunde88@gmail.com"
+  },
+  {
+    name: "Aditi Ganpat Bhondwe",
+    email: "aditibhondwe16927@gmail.com"
+  },
+  {
+    name: "Durgesh Appasaheb Ohol",
+    email: "oholdurgesh19@gmail.com"
+  },
+  {
+    name: "Sahista Rashid Shaikh",
+    email: "shaikhsahista673@gmail.com"
+  },
+  {
+    name: "Sakshi Kishor Unde",
+    email: "sakshiunde04@gmail.com"
+  },
+  {
+    name: "Sakshi Sandip Mahadik",
+    email: "sakshimahadik50207@gmail.com"
+  },
+  {
+    name: "Snehal Bharat Bhadange",
+    email: "bhadangesnehal48@gmail.com"
+  },
+  {
+    name: "Pooja Balasaheb Bhise",
+    email: "poojabhise1020@gmail.com"
+  },
+  {
+    name: "Vaishali Balu Shinde",
+    email: "platinumvaishub@gmail.com"
+  },
+  {
+    name: "Bhavika Ravindra Garje",
+    email: "bhavikagarje14@gmail.com"
+  },
+  {
+    name: "Gayatri Mohan Unde",
+    email: "Gayatriunde520@gmail.com"
+  },
+  {
+    name: "Archana Satish Sathe",
+    email: "sathesatu@gmail.com"
+  },
+  {
+    name: "Vidya Vikas Pote",
+    email: "poteaditya89@gmail.com"
+  },
+  {
+    name: "Mhaske Shrdha Bapusaheb",
+    email: "shradhamhaske2008@gmail.com"
+  },
+  {
+    name: "Thewarkar Madhuri Ramdas",
+    email: "madhurithevarkar@gmail.com"
+  },
+  {
+    name: "Hurule Pallavi Shankar",
+    email: "pallavishirole07@gmail.com"
+  },
+  {
+    name: "Aniruddha Appasaheb Pandit",
+    email: "aniruddhapandit56@gmail.com"
+  },
+  {
+    name: "Shubham Vasant Gadekar",
+    email: "shubhambrogadekar679@gmail.com"
+  },
+  {
+    name: "Harshad Rajendra Vidhate",
+    email: "vidhateharshad26@gmail.com"
+  },
+  {
+    name: "Shinde Pragati Nanasaheb",
+    email: "Shindepragati3397@gmail.com"
+  },
+  {
+    name: "Sakshi Shivaji Lokhande",
+    email: "sakshilokhande8010@gmail.com"
+  },
+  {
+    name: "Almas Aslam Fakir",
+    email: "almasfakir673@gmail.com"
+  },
+  {
+    name: "Raut Sakshi Bharat",
+    email: "rautsakshi14309@gmail.com"
+  },
+  {
+    name: "Harshal Ishwar Jadhav",
+    email: "jadhavharshal3609@gmail.com"
+  },
+  {
+    name: "Rohit Bhausaheb Gaikwad",
+    email: "rohitgaikwad5868@gmail.com"
+  },
+  {
+    name: "Payal Chandrabhan Dhepe",
+    email: "payalcdhepe25@gmail.com"
+  },
+  {
+    name: "Salve Nandini Ravindra",
+    email: "nandinisalve89@gmail.com"
+  },
+  {
+    name: "Atul Dillip Suradkar",
+    email: "Atulsuradkar2003@gmail.com"
+  },
+  {
+    name: "Arya Arun Pawar",
+    email: "aryapawar755@gmail.com"
+  },
+  {
+    name: "Shaharukh Harun Shaikh",
+    email: "sharukhshaikh9838523@gmail.com"
+  }
+];
 
-      for (let i = 0; i < tr.length; i++) {
+    // =========================
+    // DOM ELEMENTS
+    // =========================
 
-        let name = tr[i].getElementsByTagName("td")[1];
-        let email = tr[i].getElementsByTagName("td")[2];
+    const tableBody = document.getElementById("studentTableBody");
+    const totalCount = document.getElementById("totalCount");
+    const heroCount = document.getElementById("heroCount");
+    const searchInput = document.getElementById("studentSearch");
 
-        if (name || email) {
+    // =========================
+    // RENDER TABLE
+    // =========================
 
-          let nameText = name.textContent || name.innerText;
-          let emailText = email.textContent || email.innerText;
+    function renderStudents(studentList) {
 
-          if (
-            nameText.toLowerCase().indexOf(filter) > -1 ||
-            emailText.toLowerCase().indexOf(filter) > -1
-          ) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
+      tableBody.innerHTML = "";
 
-        }
+      studentList.forEach((student, index) => {
 
-      }
+        const row = `
+          <tr>
+            <td class="serial">${String(index + 1).padStart(2, '0')}</td>
+
+            <td>${student.name}</td>
+
+            <td class="email">
+              <a href="mailto:${student.email}">
+                ${student.email}
+              </a>
+            </td>
+          </tr>
+        `;
+
+        tableBody.innerHTML += row;
+
+      });
 
     }
+
+    // =========================
+    // UPDATE COUNTS
+    // =========================
+
+    function updateCounts() {
+
+      const count = students.length;
+
+      totalCount.innerText = `Total Registered Students : ${count}`;
+      heroCount.innerText = `${count}+`;
+
+    }
+
+    // =========================
+    // SEARCH FUNCTION
+    // =========================
+
+    function searchStudents() {
+
+      const searchValue = searchInput.value.toLowerCase();
+
+      const filteredStudents = students.filter(student => {
+
+        return (
+          student.name.toLowerCase().includes(searchValue) ||
+          student.email.toLowerCase().includes(searchValue)
+        );
+
+      });
+
+      renderStudents(filteredStudents);
+
+    }
+
+    // =========================
+    // EVENT LISTENER
+    // =========================
+
+    searchInput.addEventListener("keyup", searchStudents);
+
+    // =========================
+    // INITIAL LOAD
+    // =========================
+
+    renderStudents(students);
+    updateCounts();
+
   </script>
 
 </body>
