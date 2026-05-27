@@ -1,0 +1,8 @@
+vide(3,3,3)
+print(div3)
+div4 = divide(4,4,4)
+print(div4)
+div5 = divide(5,5,5)
+print(div5)
+div6 = divide(6,6,6)
+print(div6)
