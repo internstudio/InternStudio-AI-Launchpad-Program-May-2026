@@ -413,6 +413,78 @@
 
     }
 
+    /* ============================
+       CONTRIBUTOR BADGE & ANIMATION
+    ============================ */
+
+    @keyframes pulse-ring {
+      0% {
+        box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.55);
+      }
+
+      70% {
+        box-shadow: 0 0 0 8px rgba(5, 150, 105, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% center;
+      }
+
+      100% {
+        background-position: 200% center;
+      }
+    }
+
+    .name-cell {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .verified-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background: linear-gradient(135deg, #059669, #10b981);
+      border-radius: 50%;
+      color: white;
+      font-size: 11px;
+      font-weight: 900;
+      flex-shrink: 0;
+      animation: pulse-ring 1.8s ease-out infinite;
+    }
+
+    .contributor-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 11px 3px 4px;
+      border-radius: 50px;
+      border: 1.5px solid #10b981;
+      background: linear-gradient(90deg,
+          #ecfdf5 0%,
+          #d1fae5 40%,
+          #a7f3d0 60%,
+          #d1fae5 80%,
+          #ecfdf5 100%);
+      background-size: 200% auto;
+      animation: shimmer 2.8s linear infinite;
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #065f46;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
     @media(max-width:768px) {
 
       th:nth-child(3),
@@ -436,11 +508,8 @@
 
           <div class="brand">
 
-            <img
-              src="https://www.internstudio.in/lovable-uploads/af43932e-5a21-41ec-8007-ea1c337ec9c0.png"
-              class="logo"
-              alt="InternStudio Logo"
-            >
+            <img src="https://www.internstudio.in/lovable-uploads/af43932e-5a21-41ec-8007-ea1c337ec9c0.png" class="logo"
+              alt="InternStudio Logo">
 
             <div class="title">
               <h1>🚀 InternStudio AI Launchpad Program</h1>
@@ -524,11 +593,7 @@
       </div>
 
       <div class="search-box">
-        <input
-          type="text"
-          id="studentSearch"
-          placeholder="Search student name or email..."
-        >
+        <input type="text" id="studentSearch" placeholder="Search student name or email...">
       </div>
 
       <div class="table-wrapper">
@@ -582,11 +647,7 @@
 
       </p>
 
-      <a
-        href="https://forms.gle/Ut6C6YHgKAj9f3du5"
-        target="_blank"
-        class="apply-btn"
-      >
+      <a href="https://forms.gle/Ut6C6YHgKAj9f3du5" target="_blank" class="apply-btn">
         Apply Now →
       </a>
 
@@ -600,192 +661,198 @@
     // STUDENT DATA
     // =========================
 
-   const students = [
-  {
-    name: "Gauravi Kishor Somvanshi",
-    email: "gauravisomvanshi111@gmail.com"
-  },
-  {
-    name: "Dhanashri Vishnu Wagh",
-    email: "waghdhanashri72@gmail.com"
-  },
-  {
-    name: "Samruddhi Dilip Unde",
-    email: "samruddhiunde88@gmail.com"
-  },
-  {
-    name: "Aditi Ganpat Bhondwe",
-    email: "aditibhondwe16927@gmail.com"
-  },
-  {
-    name: "Durgesh Appasaheb Ohol",
-    email: "oholdurgesh19@gmail.com"
-  },
-  {
-    name: "Sahista Rashid Shaikh",
-    email: "shaikhsahista673@gmail.com"
-  },
-  {
-    name: "Sakshi Kishor Unde",
-    email: "sakshiunde04@gmail.com"
-  },
-  {
-    name: "Sakshi Sandip Mahadik",
-    email: "sakshimahadik50207@gmail.com"
-  },
-  {
-    name: "Snehal Bharat Bhadange",
-    email: "bhadangesnehal48@gmail.com"
-  },
-  {
-    name: "Pooja Balasaheb Bhise",
-    email: "poojabhise1020@gmail.com"
-  },
-  {
-    name: "Vaishali Balu Shinde",
-    email: "platinumvaishub@gmail.com"
-  },
-  {
-    name: "Bhavika Ravindra Garje",
-    email: "bhavikagarje14@gmail.com"
-  },
-  {
-    name: "Gayatri Mohan Unde",
-    email: "Gayatriunde520@gmail.com"
-  },
-  {
-    name: "Archana Satish Sathe",
-    email: "sathesatu@gmail.com"
-  },
-  {
-    name: "Vidya Vikas Pote",
-    email: "poteaditya89@gmail.com"
-  },
-  {
-    name: "Mhaske Shrdha Bapusaheb",
-    email: "shradhamhaske2008@gmail.com"
-  },
-  {
-    name: "Thewarkar Madhuri Ramdas",
-    email: "madhurithevarkar@gmail.com"
-  },
-  {
-    name: "Hurule Pallavi Shankar",
-    email: "pallavishirole07@gmail.com"
-  },
-  {
-    name: "Aniruddha Appasaheb Pandit",
-    email: "aniruddhapandit56@gmail.com"
-  },
-  {
-    name: "Shubham Vasant Gadekar",
-    email: "shubhambrogadekar679@gmail.com"
-  },
-  {
-    name: "Harshad Rajendra Vidhate",
-    email: "vidhateharshad26@gmail.com"
-  },
-  {
-    name: "Shinde Pragati Nanasaheb",
-    email: "Shindepragati3397@gmail.com"
-  },
-  {
-    name: "Sakshi Shivaji Lokhande",
-    email: "sakshilokhande8010@gmail.com"
-  },
-  {
-    name: "Almas Aslam Fakir",
-    email: "almasfakir673@gmail.com"
-  },
-  {
-    name: "Raut Sakshi Bharat",
-    email: "rautsakshi14309@gmail.com"
-  },
-  {
-    name: "Harshal Ishwar Jadhav",
-    email: "jadhavharshal3609@gmail.com"
-  },
-  {
-    name: "Rohit Bhausaheb Gaikwad",
-    email: "rohitgaikwad5868@gmail.com"
-  },
-  {
-    name: "Payal Chandrabhan Dhepe",
-    email: "payalcdhepe25@gmail.com"
-  },
-  {
-    name: "Salve Nandini Ravindra",
-    email: "nandinisalve89@gmail.com"
-  },
-  {
-    name: "Atul Dillip Suradkar",
-    email: "Atulsuradkar2003@gmail.com"
-  },
-  {
-    name: "Arya Arun Pawar",
-    email: "aryapawar755@gmail.com"
-  },
-  {
-    name: "Shaharukh Harun Shaikh",
-    email: "sharukhshaikh9838523@gmail.com"
-  },
-     {
-    name: "Avinash vikram Rajput",
-    email: "avinashra268@gmail.com"   
-     },
-     {
-    name: "Sakshi Babasaheb Gaidhane ",
-    email: "gaidhanesakshi9@gmail.com"   
-     },
-     {
-    name: "Samiksha Prashant Patil",
-    email: "samikshapatil0613@gmail.com"   
-     },
-     {
-    name: "Ankita Chandrakant Gaikwad",
-    email: "sangitagaikwad1634@gmail.com"   
-     },
-     {
-    name: "Pranjali Govind Kotkar",
-    email: "kotkarpranjali890@gmail.com"   
-     },
-     {
-    name: "Saksham Vijay Kudale",
-    email: "sakshamkudale23@gmail.com"   
-     },
-     {
-    name: "Anjali Ganesh Kute",
-    email: "anjalikute501@gmail.com"   
-     },
-     {
-       name : "Asmita Arjun Makasare",
-       email: "arjunmakasare5@gmail.com"
-     },
-     {
-       name : "Gaurav Babasaheb Pujari",
-       email: "gauravpujari04@gmail.com"
-     },
-     {
-       name : "Anuja Bapurao Sonawane",
-       email: "anujasonawane935@gmail.com"
-     },
-     {
-       name : "Krushna Machhindra Pawar",
-       email: "pawarkirshna0001@gmail.com"
-     },
-     {
-       name : "Vivek Vyankat Khatane",
-       email: "vivekkhatane2550@gmail.com"
-     },
-     {
-       name : "Parag Prashant Kharat",
-       email: "kharatparag22@gmail.com"
-     },
-     {
-       name : "Swaraj Arvind Temak",
-       email: "swarajtemak321@gmail.com"
-     },
-];
+    const students = [
+      {
+        name: "Gauravi Kishor Somvanshi",
+        email: "gauravisomvanshi111@gmail.com",
+        isContributer: true
+      },
+      {
+        name: "Dhanashri Vishnu Wagh",
+        email: "waghdhanashri72@gmail.com",
+        isContributer: true
+      },
+      {
+        name: "Samruddhi Dilip Unde",
+        email: "samruddhiunde88@gmail.com"
+      },
+      {
+        name: "Aditi Ganpat Bhondwe",
+        email: "aditibhondwe16927@gmail.com"
+      },
+      {
+        name: "Durgesh Appasaheb Ohol",
+        email: "oholdurgesh19@gmail.com",
+        isContributer: true
+      },
+      {
+        name: "Sahista Rashid Shaikh",
+        email: "shaikhsahista673@gmail.com"
+      },
+      {
+        name: "Sakshi Kishor Unde",
+        email: "sakshiunde04@gmail.com"
+      },
+      {
+        name: "Sakshi Sandip Mahadik",
+        email: "sakshimahadik50207@gmail.com"
+      },
+      {
+        name: "Snehal Bharat Bhadange",
+        email: "bhadangesnehal48@gmail.com"
+      },
+      {
+        name: "Pooja Balasaheb Bhise",
+        email: "poojabhise1020@gmail.com"
+      },
+      {
+        name: "Vaishali Balu Shinde",
+        email: "platinumvaishub@gmail.com",
+        isContributer: true
+      },
+      {
+        name: "Bhavika Ravindra Garje",
+        email: "bhavikagarje14@gmail.com"
+      },
+      {
+        name: "Gayatri Mohan Unde",
+        email: "Gayatriunde520@gmail.com"
+      },
+      {
+        name: "Archana Satish Sathe",
+        email: "sathesatu@gmail.com"
+      },
+      {
+        name: "Vidya Vikas Pote",
+        email: "poteaditya89@gmail.com"
+      },
+      {
+        name: "Mhaske Shrdha Bapusaheb",
+        email: "shradhamhaske2008@gmail.com"
+      },
+      {
+        name: "Thewarkar Madhuri Ramdas",
+        email: "madhurithevarkar@gmail.com"
+      },
+      {
+        name: "Hurule Pallavi Shankar",
+        email: "pallavishirole07@gmail.com"
+      },
+      {
+        name: "Aniruddha Appasaheb Pandit",
+        email: "aniruddhapandit56@gmail.com"
+      },
+      {
+        name: "Shubham Vasant Gadekar",
+        email: "shubhambrogadekar679@gmail.com"
+      },
+      {
+        name: "Harshad Rajendra Vidhate",
+        email: "vidhateharshad26@gmail.com"
+      },
+      {
+        name: "Shinde Pragati Nanasaheb",
+        email: "Shindepragati3397@gmail.com"
+      },
+      {
+        name: "Sakshi Shivaji Lokhande",
+        email: "sakshilokhande8010@gmail.com"
+      },
+      {
+        name: "Almas Aslam Fakir",
+        email: "almasfakir673@gmail.com",
+        isContributer: true
+      },
+      {
+        name: "Raut Sakshi Bharat",
+        email: "rautsakshi14309@gmail.com"
+      },
+      {
+        name: "Harshal Ishwar Jadhav",
+        email: "jadhavharshal3609@gmail.com"
+      },
+      {
+        name: "Rohit Bhausaheb Gaikwad",
+        email: "rohitgaikwad5868@gmail.com"
+      },
+      {
+        name: "Payal Chandrabhan Dhepe",
+        email: "payalcdhepe25@gmail.com"
+      },
+      {
+        name: "Salve Nandini Ravindra",
+        email: "nandinisalve89@gmail.com"
+      },
+      {
+        name: "Atul Dillip Suradkar",
+        email: "Atulsuradkar2003@gmail.com"
+      },
+      {
+        name: "Arya Arun Pawar",
+        email: "aryapawar755@gmail.com"
+      },
+      {
+        name: "Shaharukh Harun Shaikh",
+        email: "sharukhshaikh9838523@gmail.com"
+      },
+      {
+        name: "Avinash vikram Rajput",
+        email: "avinashra268@gmail.com",
+        isContributer: true
+      },
+      {
+        name: "Sakshi Babasaheb Gaidhane ",
+        email: "gaidhanesakshi9@gmail.com"
+      },
+      {
+        name: "Samiksha Prashant Patil",
+        email: "samikshapatil0613@gmail.com"
+      },
+      {
+        name: "Ankita Chandrakant Gaikwad",
+        email: "sangitagaikwad1634@gmail.com"
+      },
+      {
+        name: "Pranjali Govind Kotkar",
+        email: "kotkarpranjali890@gmail.com"
+      },
+      {
+        name: "Saksham Vijay Kudale",
+        email: "sakshamkudale23@gmail.com"
+      },
+      {
+        name: "Anjali Ganesh Kute",
+        email: "anjalikute501@gmail.com"
+      },
+      {
+        name: "Asmita Arjun Makasare",
+        email: "arjunmakasare5@gmail.com"
+      },
+      {
+        name: "Gaurav Babasaheb Pujari",
+        email: "gauravpujari04@gmail.com"
+      },
+      {
+        name: "Anuja Bapurao Sonawane",
+        email: "anujasonawane935@gmail.com"
+      },
+      {
+        name: "Krushna Machhindra Pawar",
+        email: "pawarkirshna0001@gmail.com"
+      },
+      {
+        name: "Vivek Vyankat Khatane",
+        email: "vivekkhatane2550@gmail.com"
+      },
+      {
+        name: "Parag Prashant Kharat",
+        email: "kharatparag22@gmail.com"
+      },
+      {
+        name: "Swaraj Arvind Temak",
+        email: "swarajtemak321@gmail.com"
+      },
+    ];
 
     // =========================
     // DOM ELEMENTS
@@ -806,11 +873,23 @@
 
       studentList.forEach((student, index) => {
 
+        const contributorBadge = student.isContributer === true
+          ? `<span class="contributor-badge">
+               <span class="verified-icon">&#10003;</span>
+               Contributor
+             </span>`
+          : ``;
+
         const row = `
           <tr>
             <td class="serial">${String(index + 1).padStart(2, '0')}</td>
 
-            <td>${student.name}</td>
+            <td>
+              <div class="name-cell">
+                <span>${student.name}</span>
+                ${contributorBadge}
+              </div>
+            </td>
 
             <td class="email">
               <a href="mailto:${student.email}">
