@@ -1,8 +1,10 @@
-vide(3,3,3)
-print(div3)
-div4 = divide(4,4,4)
-print(div4)
-div5 = divide(5,5,5)
-print(div5)
-div6 = divide(6,6,6)
-print(div6)
+# keyword argumanets function
+def total(*numbers):
+    s = sum(numbers)
+    return s
+
+
+print(total(1,2,3,4,5,6,7,8,9))
+print(total(1,2,3,4,5,6))
+print(total(1,2,3,4))
+print(total(1,2))
