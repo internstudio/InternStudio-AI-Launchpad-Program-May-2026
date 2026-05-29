@@ -1,6 +1,7 @@
 # Number Pattern Printing Program
 # This script prints two patterns as described in the requirements.
 
+from Day_10 import Main
 def pattern_one(n=5):
     """Prints pattern:
     1
@@ -21,9 +22,11 @@ def pattern_two(start=5):
     54
     5
     """
-    for i in range(start, 0, -1):
-        line = ''.join(str(j) for j in range(start, i - 1, -1))
-        print(line)
+    n = 5
+    for i in range(1,n+1):
+        for j in range(n,i-1,-1):
+            print(j,end="")
+    print()
 
 
 def main():
