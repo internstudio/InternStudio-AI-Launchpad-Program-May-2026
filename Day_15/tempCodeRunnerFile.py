@@ -1,0 +1,1 @@
+print("*"*8,"Hello! Welcome to the quiz Application","*"*8)
