@@ -387,6 +387,98 @@
       box-shadow: 0 18px 35px rgba(37, 99, 235, 0.4);
     }
 
+    /* ============================
+       QUICK LINKS BANNER
+    ============================ */
+    .quick-links-banner {
+      margin-top: 30px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .quick-link-card {
+      flex: 1;
+      min-width: 240px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 28px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: 0.35s ease;
+      position: relative;
+      overflow: hidden;
+      border: 1.5px solid transparent;
+    }
+
+    .quick-link-card.github {
+      background: linear-gradient(135deg, #161b22, #21262d);
+      color: #e6edf3;
+      border-color: rgba(255,255,255,0.12);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    }
+
+    .quick-link-card.youtube {
+      background: linear-gradient(135deg, #1a0a0a, #2d0f0f);
+      color: #fecaca;
+      border-color: rgba(239,68,68,0.25);
+      box-shadow: 0 10px 30px rgba(239,68,68,0.2);
+    }
+
+    .quick-link-card:hover {
+      transform: translateY(-6px) scale(1.02);
+    }
+
+    .quick-link-card.github:hover {
+      box-shadow: 0 20px 45px rgba(0,0,0,0.45);
+      border-color: rgba(255,255,255,0.25);
+    }
+
+    .quick-link-card.youtube:hover {
+      box-shadow: 0 20px 45px rgba(239,68,68,0.35);
+      border-color: rgba(239,68,68,0.5);
+    }
+
+    .quick-link-icon {
+      font-size: 38px;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .quick-link-text {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .quick-link-text span {
+      font-size: 12px;
+      font-weight: 500;
+      opacity: 0.65;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .quick-link-text strong {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .quick-link-arrow {
+      margin-left: auto;
+      font-size: 22px;
+      opacity: 0.5;
+      transition: 0.3s ease;
+    }
+
+    .quick-link-card:hover .quick-link-arrow {
+      opacity: 1;
+      transform: translateX(4px);
+    }
+
     @media(max-width:900px) {
 
       .hero {
@@ -579,6 +671,31 @@
       </div>
 
     </section>
+
+    <!-- QUICK LINKS BANNER -->
+    <div class="quick-links-banner">
+
+      <a href="https://github.com/internstudio/InternStudio-AI-Launchpad-Program-May-2026"
+        target="_blank" class="quick-link-card github">
+        <div class="quick-link-icon">🐙</div>
+        <div class="quick-link-text">
+          <span>Program Resources</span>
+          <strong>GitHub Repository</strong>
+        </div>
+        <div class="quick-link-arrow">→</div>
+      </a>
+
+      <a href="https://www.youtube.com/@intern_studio"
+        target="_blank" class="quick-link-card youtube">
+        <div class="quick-link-icon">▶️</div>
+        <div class="quick-link-text">
+          <span>Watch &amp; Learn</span>
+          <strong>YouTube Channel</strong>
+        </div>
+        <div class="quick-link-arrow">→</div>
+      </a>
+
+    </div>
 
     <section class="table-section">
 
